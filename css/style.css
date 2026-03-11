@@ -1,0 +1,62 @@
+:root {
+    --gold: #AF9662;
+    --glass-dark: rgba(0, 0, 0, 0.7);
+}
+
+body { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+
+/* Animaciones de Entrada */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up { animation: fadeInUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+/* Scroll Reveal (Aparición lateral) */
+.reveal-left { opacity: 0; transform: translateX(-60px); transition: all 1.8s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal-right { opacity: 0; transform: translateX(60px); transition: all 1.8s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal-visible { opacity: 1 !important; transform: translateX(0) !important; }
+
+/* Checkout Inputs */
+.chk-input {
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 0;
+    color: white;
+    font-size: 10px;
+    letter-spacing: 3px;
+    outline: none;
+    transition: 0.4s;
+    width: 100%;
+}
+.chk-input:focus { border-color: var(--gold); }
+.chk-input::placeholder { color: rgba(255,255,255,0.2); }
+
+/* Product Cards */
+.product-card { position: relative; overflow: hidden; height: 550px; cursor: pointer; }
+.product-card img { filter: brightness(0.6); transition: 1.5s cubic-bezier(0.16, 1, 0.3, 1); }
+.product-card:hover img { transform: scale(1.08); filter: brightness(0.9); }
+.details-glass {
+    background: var(--glass-dark);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Edición Carrito Buttons */
+.qty-btn {
+    width: 24px;
+    height: 24px;
+    border: 1px solid rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    transition: 0.3s;
+    color: white;
+}
+.qty-btn:hover { background: white; color: black; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: var(--gold); }
