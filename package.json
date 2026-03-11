@@ -1,0 +1,11 @@
+{
+  "name": "hilara-demo",
+  "version": "1.0.0",
+  "description": "Demo visual de tienda Hilara",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "author": "Esteban",
+  "license": "ISC"
+}
