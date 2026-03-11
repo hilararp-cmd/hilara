@@ -137,6 +137,18 @@ function saveCart() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(carrito));
 }
 
+function goTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function toggleMobileMenu() {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+}
+
+function closeMobileMenu() {
+    document.getElementById('mobile-menu').classList.add('hidden');
+}
+
 function renderStore() {
     const contR = document.getElementById('catalog-ruanas');
     const contP = document.getElementById('catalog-pashminas');
@@ -146,11 +158,11 @@ function renderStore() {
 
     productos.forEach(p => {
         const html = `
-            <div class="product-card group relative overflow-hidden h-[550px] cursor-pointer" onclick="openModal(${p.id})">
+            <div class="product-card group relative overflow-hidden cursor-pointer" onclick="openModal(${p.id})">
                 <img src="${p.imgs[0]}" alt="${p.nombre}" class="w-full h-full object-cover opacity-60 group-hover:opacity-90 transition duration-1000 group-hover:scale-110">
-                <div class="details-glass absolute bottom-4 left-4 right-4 p-6 text-center backdrop-blur-md border border-white/10 bg-black/60">
-                    <h3 class="font-serif text-white text-xl italic mb-2">${p.nombre}</h3>
-                    <p class="text-[#AF9662] font-semibold tracking-widest text-sm">$${p.precio.toLocaleString('es-AR')}</p>
+                <div class="details-glass absolute bottom-3 md:bottom-4 left-3 md:left-4 right-3 md:right-4 p-5 md:p-6 text-center backdrop-blur-md border border-white/10 bg-black/60">
+                    <h3 class="font-serif text-white text-lg md:text-xl italic mb-2">${p.nombre}</h3>
+                    <p class="text-[#AF9662] font-semibold tracking-[0.12em] md:tracking-widest text-sm">$${p.precio.toLocaleString('es-AR')}</p>
                 </div>
             </div>
         `;
@@ -179,7 +191,9 @@ function openModal(id) {
     document.getElementById('modal-talle').value = 'Único';
     document.getElementById('modal-qty').value = 1;
 
-    document.getElementById('product-modal').classList.remove('hidden');
+    const modal = document.getElementById('product-modal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
     document.body.style.overflow = 'hidden';
 }
 
@@ -189,7 +203,9 @@ function changeModalImg(i) {
 }
 
 function closeModal() {
-    document.getElementById('product-modal').classList.add('hidden');
+    const modal = document.getElementById('product-modal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
     document.body.style.overflow = 'auto';
 }
 
@@ -231,16 +247,16 @@ function updateUI() {
         total += item.precio * item.qty;
 
         cont.innerHTML += `
-            <div class="flex justify-between items-center border-b border-white/5 pb-6 gap-4">
+            <div class="flex justify-between items-center border-b border-white/5 pb-5 md:pb-6 gap-4">
                 <div class="flex-1">
-                    <p class="text-[10px] tracking-widest uppercase font-semibold text-white">${item.nombre}</p>
-                    <p class="text-white/40 text-[10px] mt-1">Talle: ${item.talle}</p>
-                    <p class="text-[#AF9662] text-[10px] mt-1 italic">$${item.precio.toLocaleString('es-AR')}</p>
+                    <p class="text-[11px] md:text-[10px] tracking-[0.12em] md:tracking-widest uppercase font-semibold text-white">${item.nombre}</p>
+                    <p class="text-white/40 text-[11px] md:text-[10px] mt-1">Talle: ${item.talle}</p>
+                    <p class="text-[#AF9662] text-[11px] md:text-[10px] mt-1 italic">$${item.precio.toLocaleString('es-AR')}</p>
                 </div>
                 <div class="flex items-center space-x-3">
-                    <button onclick="changeQty(${i}, -1)" class="w-7 h-7 border border-white/20 text-xs hover:bg-white hover:text-black transition">-</button>
-                    <span class="text-xs text-white min-w-[16px] text-center">${item.qty}</span>
-                    <button onclick="changeQty(${i}, 1)" class="w-7 h-7 border border-white/20 text-xs hover:bg-white hover:text-black transition">+</button>
+                    <button onclick="changeQty(${i}, -1)" class="w-8 h-8 md:w-7 md:h-7 border border-white/20 text-sm md:text-xs hover:bg-white hover:text-black transition rounded-full">-</button>
+                    <span class="text-sm md:text-xs text-white min-w-[16px] text-center">${item.qty}</span>
+                    <button onclick="changeQty(${i}, 1)" class="w-8 h-8 md:w-7 md:h-7 border border-white/20 text-sm md:text-xs hover:bg-white hover:text-black transition rounded-full">+</button>
                 </div>
             </div>
         `;
@@ -299,10 +315,10 @@ function validarYMostrarPago() {
     ids.forEach(id => {
         const el = document.getElementById(id);
         if (!el.value.trim()) {
-            el.style.borderColor = 'red';
+            el.style.borderBottomColor = 'red';
             ok = false;
         } else {
-            el.style.borderColor = 'rgba(255,255,255,0.1)';
+            el.style.borderBottomColor = 'rgba(255,255,255,0.12)';
         }
     });
 
@@ -357,3 +373,12 @@ function initReveal() {
 
     elements.forEach(el => observer.observe(el));
 }
+
+document.addEventListener('click', function (e) {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const isMenuButton = e.target.closest('button') && e.target.closest('button').textContent.trim().includes('Menú');
+
+    if (!mobileMenu.classList.contains('hidden') && !e.target.closest('#mobile-menu') && !isMenuButton) {
+        mobileMenu.classList.add('hidden');
+    }
+});
