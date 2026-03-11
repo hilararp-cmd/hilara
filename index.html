@@ -4,120 +4,142 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>HILARA | Alta Indumentaria</title>
-    <meta name="theme-color" content="#000000">
+    <meta name="theme-color" content="#f4efe7">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&family=Lora:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/style.css">
 </head>
-<body class="bg-black text-white font-['Inter'] overflow-x-hidden">
+<body class="hilara-body font-['Inter'] overflow-x-hidden">
 
-    <div class="fixed inset-0 -z-10 w-full h-full overflow-hidden">
-        <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-30 sepia-[.5]">
+    <div class="fixed inset-0 -z-20 w-full h-full overflow-hidden">
+        <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-20">
             <source src="src/video/video.mp4" type="video/mp4">
         </video>
-        <div class="absolute inset-0 bg-black/35"></div>
+        <div class="absolute inset-0 bg-[rgba(244,239,231,0.78)]"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.45),transparent_45%)]"></div>
     </div>
 
-    <header class="fixed top-0 w-full z-[100] backdrop-blur-xl border-b border-white/5">
+    <header class="fixed top-0 w-full z-[100] hilara-header">
         <nav class="max-w-7xl mx-auto px-4 md:px-6 py-4 md:py-5 flex justify-between items-center">
-            <div class="text-lg md:text-2xl tracking-[0.35em] md:tracking-[0.5em] font-extralight cursor-pointer select-none" onclick="goTop()">
+            <div class="text-lg md:text-2xl tracking-[0.32em] md:tracking-[0.45em] font-light cursor-pointer select-none text-[var(--text-main)]" onclick="goTop()">
                 HILARA
             </div>
 
-            <div class="hidden md:flex space-x-10 text-[10px] tracking-[0.4em] font-light">
-                <a href="#ruanas" class="hover:text-[#AF9662] transition uppercase">Ruanas</a>
-                <a href="#pashminas" class="hover:text-[#AF9662] transition uppercase">Pashminas</a>
-                <a href="#nosotros" class="hover:text-[#AF9662] transition uppercase">Nosotros</a>
-                <a href="#contacto" class="hover:text-[#AF9662] transition uppercase">Contacto</a>
+            <div class="hidden md:flex space-x-10 text-[11px] tracking-[0.28em] font-light text-[var(--text-soft)]">
+                <a href="#ruanas" class="hover:text-[var(--accent)] transition uppercase">Ruanas</a>
+                <a href="#pashminas" class="hover:text-[var(--accent)] transition uppercase">Pashminas</a>
+                <a href="#nosotros" class="hover:text-[var(--accent)] transition uppercase">Nosotros</a>
+                <a href="#contacto" class="hover:text-[var(--accent)] transition uppercase">Contacto</a>
             </div>
 
             <div class="flex items-center gap-3">
-                <button class="md:hidden text-[11px] tracking-[0.25em] uppercase text-white/80 border border-white/10 px-3 py-2 rounded-full" onclick="toggleMobileMenu()">
+                <button class="md:hidden text-[11px] tracking-[0.2em] uppercase px-3 py-2 rounded-full hilara-outline-btn" onclick="toggleMobileMenu()">
                     Menú
                 </button>
 
-                <div class="cursor-pointer relative text-white" onclick="toggleCart()">
+                <div class="cursor-pointer relative text-[var(--text-main)]" onclick="toggleCart()">
                     <span class="text-xl">🧺</span>
-                    <span id="cart-count" class="absolute -top-2 -right-2 bg-[#AF9662] text-white text-[9px] px-1.5 py-0.5 rounded-full font-bold">0</span>
+                    <span id="cart-count" class="absolute -top-2 -right-2 bg-[var(--accent)] text-white text-[9px] px-1.5 py-0.5 rounded-full font-bold">0</span>
                 </div>
             </div>
         </nav>
 
         <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
-            <div class="rounded-2xl border border-white/10 bg-black/70 backdrop-blur-xl p-4 flex flex-col gap-3 text-[11px] tracking-[0.25em] uppercase">
-                <a href="#ruanas" onclick="closeMobileMenu()" class="hover:text-[#AF9662] transition">Ruanas</a>
-                <a href="#pashminas" onclick="closeMobileMenu()" class="hover:text-[#AF9662] transition">Pashminas</a>
-                <a href="#nosotros" onclick="closeMobileMenu()" class="hover:text-[#AF9662] transition">Nosotros</a>
-                <a href="#contacto" onclick="closeMobileMenu()" class="hover:text-[#AF9662] transition">Contacto</a>
+            <div class="hilara-mobile-menu p-4 flex flex-col gap-3 text-[11px] tracking-[0.22em] uppercase">
+                <a href="#ruanas" onclick="closeMobileMenu()" class="hover:text-[var(--accent)] transition">Ruanas</a>
+                <a href="#pashminas" onclick="closeMobileMenu()" class="hover:text-[var(--accent)] transition">Pashminas</a>
+                <a href="#nosotros" onclick="closeMobileMenu()" class="hover:text-[var(--accent)] transition">Nosotros</a>
+                <a href="#contacto" onclick="closeMobileMenu()" class="hover:text-[var(--accent)] transition">Contacto</a>
             </div>
         </div>
     </header>
 
     <main>
         <section class="min-h-screen flex flex-col items-center justify-center text-center px-5 pt-28 pb-16">
-            <h1 class="font-serif text-white text-4xl sm:text-5xl md:text-8xl mb-5 md:mb-6 italic animate-fade-in-up leading-tight">
-                Arte en cada trama.
+            <p class="hilara-badge mb-6 animate-fade-in-up">Tejidos nobles · Estilo atemporal · Boutique premium</p>
+
+            <h1 class="font-serif text-[var(--text-main)] text-4xl sm:text-5xl md:text-7xl mb-5 italic animate-fade-in-up leading-tight max-w-4xl">
+                Arte textil con esencia natural.
             </h1>
 
-            <p class="text-white/60 tracking-[0.25em] md:tracking-[0.5em] text-[10px] md:text-[9px] mb-10 md:mb-12 uppercase max-w-[320px] md:max-w-none">
-                Exclusividad desde el Norte Argentino
+            <p class="text-[var(--text-soft)] tracking-[0.18em] md:tracking-[0.32em] text-[11px] md:text-[10px] mb-10 uppercase max-w-[700px] leading-relaxed">
+                Ruanas y pashminas con identidad cálida, diseño artesanal y una estética inspirada en tonos tierra.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-up w-full sm:w-auto max-w-[320px] sm:max-w-none">
-                <a href="#ruanas" class="px-8 py-4 border border-white/20 text-[11px] md:text-[10px] tracking-[0.25em] md:tracking-widest hover:bg-white hover:text-black transition duration-500 uppercase text-white rounded-full">
+                <a href="#ruanas" class="hilara-main-btn">
                     Colección Ruanas
                 </a>
-                <a href="#pashminas" class="px-8 py-4 border border-white/10 text-[11px] md:text-[10px] tracking-[0.25em] md:tracking-widest hover:bg-white hover:text-black transition duration-500 uppercase text-white/90 rounded-full">
+                <a href="#pashminas" class="hilara-secondary-btn">
                     Ver Pashminas
                 </a>
             </div>
         </section>
 
-        <section id="ruanas" class="py-16 md:py-24 bg-white/5 scroll-mt-24">
-            <h2 class="text-center font-serif text-3xl md:text-4xl mb-10 md:mb-16 italic tracking-[0.15em] md:tracking-widest text-white px-4">
-                Colección Ruanas
-            </h2>
-            <div id="catalog-ruanas" class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 md:gap-8 px-4 md:px-6"></div>
+        <section id="ruanas" class="py-16 md:py-24 bg-[rgba(255,255,255,0.36)] scroll-mt-24 border-y border-[rgba(120,92,61,0.08)]">
+            <div class="max-w-7xl mx-auto px-4 md:px-6">
+                <div class="text-center mb-10 md:mb-16">
+                    <p class="hilara-section-kicker">Colección destacada</p>
+                    <h2 class="text-center font-serif text-3xl md:text-4xl italic text-[var(--text-main)]">
+                        Colección Ruanas
+                    </h2>
+                </div>
+                <div id="catalog-ruanas" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 md:gap-8"></div>
+            </div>
         </section>
 
         <section id="pashminas" class="py-16 md:py-24 scroll-mt-24">
-            <h2 class="text-center font-serif text-3xl md:text-4xl mb-10 md:mb-16 italic tracking-[0.15em] md:tracking-widest text-white px-4">
-                Colección Pashminas
-            </h2>
-            <div id="catalog-pashminas" class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 md:gap-8 px-4 md:px-6"></div>
+            <div class="max-w-7xl mx-auto px-4 md:px-6">
+                <div class="text-center mb-10 md:mb-16">
+                    <p class="hilara-section-kicker">Línea delicada</p>
+                    <h2 class="text-center font-serif text-3xl md:text-4xl italic text-[var(--text-main)]">
+                        Colección Pashminas
+                    </h2>
+                </div>
+                <div id="catalog-pashminas" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 md:gap-8"></div>
+            </div>
         </section>
 
-        <section id="nosotros" class="py-20 md:py-32 px-4 md:px-6 overflow-hidden bg-black border-t border-white/5 scroll-mt-24">
-            <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16">
-                <div class="w-full md:w-1/2 reveal-left">
-                    <img src="https://images.unsplash.com/photo-1544441892-794166f42a71?w=1200" class="grayscale hover:grayscale-0 transition duration-1000 shadow-2xl rounded-2xl" alt="Hilara">
+        <section id="nosotros" class="py-20 md:py-28 px-4 md:px-6 scroll-mt-24">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+                <div class="reveal-left">
+                    <img src="https://images.unsplash.com/photo-1544441892-794166f42a71?w=1200" class="w-full h-[420px] md:h-[560px] object-cover rounded-[26px] shadow-[0_24px_60px_rgba(120,92,61,0.14)]" alt="Hilara">
                 </div>
-                <div class="w-full md:w-1/2 reveal-right text-white/70 text-center md:text-left">
-                    <h2 class="font-serif text-3xl md:text-4xl mb-5 md:mb-6 italic text-white">Nuestra Historia</h2>
-                    <p class="leading-relaxed text-sm font-light italic text-[#AF9662] mb-4">"Tejemos el lujo con manos argentinas."</p>
-                    <p class="text-sm md:text-xs tracking-[0.12em] md:tracking-widest leading-loose">
-                        Desde San Miguel de Tucumán, Hilara redefine la elegancia artesanal combinando fibras nobles, diseño contemporáneo y una estética exclusiva para mujeres que valoran la distinción.
+
+                <div class="reveal-right">
+                    <p class="hilara-section-kicker text-left">Nuestra esencia</p>
+                    <h2 class="font-serif text-3xl md:text-5xl mb-5 italic text-[var(--text-main)]">
+                        Elegancia suave, inspiración artesanal.
+                    </h2>
+                    <p class="leading-relaxed text-base font-light italic text-[var(--accent)] mb-5">
+                        “Tejemos el lujo con una mirada cálida, natural y femenina.”
+                    </p>
+                    <p class="text-sm md:text-[15px] text-[var(--text-soft)] leading-8">
+                        Desde San Miguel de Tucumán, Hilara propone una estética boutique con texturas nobles, tonos orgánicos y piezas pensadas para vestir con presencia, suavidad y distinción. La propuesta combina identidad artesanal con una lectura contemporánea y refinada.
                     </p>
                 </div>
             </div>
         </section>
 
-        <section id="contacto" class="py-20 md:py-32 px-4 md:px-6 bg-white/5 scroll-mt-24">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="font-serif text-white text-3xl md:text-4xl mb-10 md:mb-16 italic">Contacto Exclusivo</h2>
+        <section id="contacto" class="py-20 md:py-28 px-4 md:px-6 bg-[rgba(255,255,255,0.42)] border-t border-[rgba(120,92,61,0.08)] scroll-mt-24">
+            <div class="max-w-5xl mx-auto text-center">
+                <p class="hilara-section-kicker">Contacto boutique</p>
+                <h2 class="font-serif text-[var(--text-main)] text-3xl md:text-4xl mb-10 md:mb-14 italic">
+                    Atención personalizada
+                </h2>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 text-white/60 text-[11px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] mb-12 md:mb-20">
-                    <a href="https://wa.me/5493875809594?text=Hola%20Hilara,%20quisiera%20hacer%20una%20consulta" target="_blank" class="hover:text-[#AF9662] transition uppercase">WhatsApp</a>
-                    <a href="mailto:consultas@hilara.com.ar" class="hover:text-[#AF9662] transition uppercase">Email</a>
-                    <a href="#" class="hover:text-[#AF9662] transition uppercase">Instagram</a>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 text-[var(--text-soft)] text-[11px] md:text-[10px] tracking-[0.18em] md:tracking-[0.26em] mb-12 md:mb-16 uppercase">
+                    <a href="https://wa.me/5493875809594?text=Hola%20Hilara,%20quisiera%20hacer%20una%20consulta" target="_blank" class="hilara-contact-chip">WhatsApp</a>
+                    <a href="mailto:consultas@hilara.com.ar" class="hilara-contact-chip">Email</a>
+                    <a href="#" class="hilara-contact-chip">Instagram</a>
                 </div>
 
-                <form class="max-w-lg mx-auto space-y-6" onsubmit="event.preventDefault()">
-                    <input type="email" placeholder="SU EMAIL" class="chk-input text-white">
-                    <textarea placeholder="MENSAJE" class="chk-input h-28 md:h-32 text-white"></textarea>
-                    <button type="button" class="w-full border border-white/20 py-4 md:py-5 text-[10px] md:text-[9px] tracking-[0.3em] md:tracking-[0.5em] text-white hover:bg-white hover:text-black transition uppercase rounded-full">
+                <form class="max-w-2xl mx-auto space-y-6 hilara-form-card" onsubmit="event.preventDefault()">
+                    <input type="email" placeholder="SU EMAIL" class="chk-input">
+                    <textarea placeholder="MENSAJE" class="chk-input h-28 md:h-32"></textarea>
+                    <button type="button" class="hilara-main-btn w-full">
                         Enviar Consulta
                     </button>
                 </form>
@@ -125,30 +147,31 @@
         </section>
     </main>
 
-    <div id="product-modal" class="fixed inset-0 z-[300] hidden items-end md:items-center justify-center p-0 md:p-4 backdrop-blur-2xl bg-black/80">
-        <div class="bg-neutral-900 border border-white/10 w-full max-w-5xl max-h-[95vh] md:max-h-[90vh] overflow-y-auto rounded-t-3xl md:rounded-2xl flex flex-col md:flex-row relative">
-            <button onclick="closeModal()" class="absolute top-4 right-4 md:top-6 md:right-6 z-10 text-white opacity-60 hover:opacity-100 text-xl bg-black/40 w-10 h-10 rounded-full">
+    <div id="product-modal" class="fixed inset-0 z-[300] hidden items-end md:items-center justify-center p-0 md:p-4 bg-[rgba(58,45,34,0.30)] backdrop-blur-md">
+        <div class="hilara-modal-card w-full max-w-5xl max-h-[95vh] md:max-h-[90vh] overflow-y-auto rounded-t-[28px] md:rounded-[28px] flex flex-col md:flex-row relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 md:top-6 md:right-6 z-10 text-[var(--text-main)] opacity-70 hover:opacity-100 text-xl bg-white/70 w-10 h-10 rounded-full">
                 ✕
             </button>
 
-            <div class="w-full md:w-1/2 h-[360px] sm:h-[420px] md:h-auto bg-black relative">
+            <div class="w-full md:w-1/2 h-[360px] sm:h-[420px] md:h-auto bg-[#e7ddd1] relative">
                 <img id="modal-img-main" src="" class="w-full h-full object-cover" alt="Producto">
                 <div class="absolute bottom-4 left-0 right-0 flex justify-center space-x-3 px-4">
-                    <img id="thumb-0" onclick="changeModalImg(0)" class="w-14 h-16 md:w-16 md:h-20 object-cover border border-white/20 cursor-pointer opacity-60 hover:opacity-100 transition rounded-lg" alt="Miniatura 1">
-                    <img id="thumb-1" onclick="changeModalImg(1)" class="w-14 h-16 md:w-16 md:h-20 object-cover border border-white/20 cursor-pointer opacity-60 hover:opacity-100 transition rounded-lg" alt="Miniatura 2">
-                    <img id="thumb-2" onclick="changeModalImg(2)" class="w-14 h-16 md:w-16 md:h-20 object-cover border border-white/20 cursor-pointer opacity-60 hover:opacity-100 transition rounded-lg" alt="Miniatura 3">
+                    <img id="thumb-0" onclick="changeModalImg(0)" class="w-14 h-16 md:w-16 md:h-20 object-cover border border-white/40 cursor-pointer opacity-80 hover:opacity-100 transition rounded-xl shadow" alt="Miniatura 1">
+                    <img id="thumb-1" onclick="changeModalImg(1)" class="w-14 h-16 md:w-16 md:h-20 object-cover border border-white/40 cursor-pointer opacity-80 hover:opacity-100 transition rounded-xl shadow" alt="Miniatura 2">
+                    <img id="thumb-2" onclick="changeModalImg(2)" class="w-14 h-16 md:w-16 md:h-20 object-cover border border-white/40 cursor-pointer opacity-80 hover:opacity-100 transition rounded-xl shadow" alt="Miniatura 3">
                 </div>
             </div>
 
-            <div class="w-full md:w-1/2 p-6 sm:p-8 md:p-12 flex flex-col justify-center text-white">
+            <div class="w-full md:w-1/2 p-6 sm:p-8 md:p-12 flex flex-col justify-center text-[var(--text-main)]">
+                <p class="hilara-section-kicker text-left mb-3">Selección Hilara</p>
                 <h2 id="modal-title" class="font-serif text-3xl md:text-4xl mb-2 italic"></h2>
-                <p id="modal-price" class="text-[#AF9662] text-xl md:text-2xl mb-5 md:mb-6 font-light"></p>
-                <p id="modal-desc" class="text-white/60 text-sm md:text-xs leading-relaxed md:leading-loose tracking-[0.08em] md:tracking-widest mb-8 md:mb-10"></p>
+                <p id="modal-price" class="text-[var(--accent)] text-xl md:text-2xl mb-5 font-medium"></p>
+                <p id="modal-desc" class="text-[var(--text-soft)] text-sm md:text-[13px] leading-relaxed md:leading-7 tracking-[0.03em] mb-8"></p>
 
-                <div class="grid grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-10">
+                <div class="grid grid-cols-2 gap-4 md:gap-6 mb-8">
                     <div>
-                        <label class="text-[10px] md:text-[9px] tracking-[0.2em] md:tracking-[0.3em] block mb-3 opacity-50 uppercase">Talle</label>
-                        <select id="modal-talle" class="w-full bg-black border border-white/10 p-3 md:p-4 text-[12px] md:text-[10px] outline-none text-white rounded-xl">
+                        <label class="hilara-label">Talle</label>
+                        <select id="modal-talle" class="hilara-input-box">
                             <option value="Único">ÚNICO</option>
                             <option value="S">S</option>
                             <option value="M">M</option>
@@ -156,82 +179,81 @@
                         </select>
                     </div>
                     <div>
-                        <label class="text-[10px] md:text-[9px] tracking-[0.2em] md:tracking-[0.3em] block mb-3 opacity-50 uppercase">Cantidad</label>
-                        <input type="number" id="modal-qty" value="1" min="1" class="w-full bg-black border border-white/10 p-3 md:p-4 text-[12px] md:text-[10px] outline-none text-white rounded-xl">
+                        <label class="hilara-label">Cantidad</label>
+                        <input type="number" id="modal-qty" value="1" min="1" class="hilara-input-box">
                     </div>
                 </div>
 
-                <button onclick="addToCartFromModal()" class="w-full py-4 md:py-5 bg-white text-black text-[11px] md:text-[10px] tracking-[0.25em] md:tracking-[0.5em] hover:bg-[#AF9662] hover:text-white transition duration-500 uppercase font-bold rounded-full">
+                <button onclick="addToCartFromModal()" class="hilara-main-btn w-full">
                     Añadir a Selección
                 </button>
             </div>
         </div>
     </div>
 
-    <div id="side-cart" class="fixed top-0 right-0 w-full md:w-[480px] h-full z-[200] translate-x-full transition-transform duration-500 backdrop-blur-3xl bg-black/95 border-l border-white/5 p-5 md:p-12 flex flex-col">
-        <div class="flex justify-between items-center mb-8 md:mb-12 text-white">
-            <h2 class="font-serif text-xl md:text-2xl italic tracking-[0.12em] md:tracking-widest">Su Selección</h2>
-            <button onclick="toggleCart()" class="text-xl w-10 h-10 rounded-full bg-white/5">✕</button>
+    <div id="side-cart" class="fixed top-0 right-0 w-full md:w-[460px] h-full z-[200] translate-x-full transition-transform duration-500 hilara-cart-panel p-5 md:p-10 flex flex-col">
+        <div class="flex justify-between items-center mb-8 md:mb-10 text-[var(--text-main)]">
+            <h2 class="font-serif text-xl md:text-2xl italic tracking-[0.08em]">Su Selección</h2>
+            <button onclick="toggleCart()" class="text-xl w-10 h-10 rounded-full bg-white/60 border border-[rgba(120,92,61,0.10)]">✕</button>
         </div>
 
-        <div id="cart-items" class="flex-grow overflow-y-auto space-y-6 md:space-y-8 pr-1 md:pr-4 text-white"></div>
+        <div id="cart-items" class="flex-grow overflow-y-auto space-y-6 pr-1 md:pr-2"></div>
 
-        <div id="cart-footer" class="mt-auto pt-8 md:pt-10 border-t border-white/5 hidden">
-            <div class="flex justify-between text-lg md:text-xl mb-8 md:mb-10 tracking-[0.12em] md:tracking-widest text-white">
+        <div id="cart-footer" class="mt-auto pt-8 border-t border-[rgba(120,92,61,0.10)] hidden">
+            <div class="flex justify-between text-lg md:text-xl mb-8 tracking-[0.06em] text-[var(--text-main)]">
                 <span>TOTAL</span>
-                <span id="cart-total" class="text-[#AF9662]">$0</span>
+                <span id="cart-total" class="text-[var(--accent)] font-semibold">$0</span>
             </div>
 
-            <button onclick="showCheckout()" class="w-full py-4 md:py-5 bg-[#AF9662] text-white text-[11px] md:text-[10px] tracking-[0.25em] md:tracking-[0.5em] uppercase hover:bg-white hover:text-black transition font-bold rounded-full">
+            <button onclick="showCheckout()" class="hilara-main-btn w-full">
                 Iniciar Pedido
             </button>
         </div>
     </div>
 
-    <section id="checkout-section" class="fixed inset-0 z-[400] hidden bg-black overflow-y-auto p-4 md:p-8 text-white">
-        <div class="max-w-5xl mx-auto py-8 md:py-16">
-            <button onclick="hideCheckout()" class="text-white/50 mb-8 md:mb-12 text-[10px] md:text-[9px] tracking-[0.25em] md:tracking-[0.4em] uppercase">
+    <section id="checkout-section" class="fixed inset-0 z-[400] hidden hilara-checkout-bg overflow-y-auto p-4 md:p-8">
+        <div class="max-w-6xl mx-auto py-8 md:py-16">
+            <button onclick="hideCheckout()" class="text-[var(--text-soft)] mb-8 md:mb-12 text-[10px] tracking-[0.22em] uppercase">
                 ← Volver a la Tienda
             </button>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20">
-                <div class="space-y-8 md:space-y-12">
-                    <h2 class="font-serif text-3xl md:text-4xl italic mb-2 md:mb-10">Datos de Envío</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16">
+                <div class="hilara-panel p-6 md:p-10 rounded-[26px]">
+                    <p class="hilara-section-kicker text-left mb-3">Datos del cliente</p>
+                    <h2 class="font-serif text-3xl md:text-4xl italic mb-8 text-[var(--text-main)]">Datos de Envío</h2>
 
-                    <div class="grid grid-cols-1 gap-6 md:gap-8">
-                        <input type="text" id="chk-nombre" placeholder="NOMBRE COMPLETO" class="chk-input text-white">
-
+                    <div class="grid grid-cols-1 gap-6">
+                        <input type="text" id="chk-nombre" placeholder="NOMBRE COMPLETO" class="chk-input">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <input type="email" id="chk-email" placeholder="EMAIL" class="chk-input text-white">
-                            <input type="tel" id="chk-tel" placeholder="CELULAR (CÓD. ÁREA + NÚMERO)" class="chk-input text-white">
+                            <input type="email" id="chk-email" placeholder="EMAIL" class="chk-input">
+                            <input type="tel" id="chk-tel" placeholder="CELULAR (CÓD. ÁREA + NÚMERO)" class="chk-input">
                         </div>
-
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <input type="text" id="chk-provincia" placeholder="PROVINCIA" class="chk-input text-white">
-                            <input type="text" id="chk-ciudad" placeholder="CIUDAD" class="chk-input text-white">
+                            <input type="text" id="chk-provincia" placeholder="PROVINCIA" class="chk-input">
+                            <input type="text" id="chk-ciudad" placeholder="CIUDAD" class="chk-input">
                         </div>
-
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <input type="text" id="chk-direccion" placeholder="CALLE Y NÚMERO" class="md:col-span-2 chk-input text-white">
-                            <input type="text" id="chk-cp" placeholder="CÓDIGO POSTAL" class="chk-input text-white">
+                            <input type="text" id="chk-direccion" placeholder="CALLE Y NÚMERO" class="md:col-span-2 chk-input">
+                            <input type="text" id="chk-cp" placeholder="CÓDIGO POSTAL" class="chk-input">
                         </div>
+                        <input type="text" id="chk-nota" placeholder="NOTAS (PISO, DPTO, INDICACIONES)" class="chk-input">
 
-                        <input type="text" id="chk-nota" placeholder="NOTAS (PISO, DPTO, INDICACIONES)" class="chk-input text-white">
-
-                        <button id="btn-validar" onclick="validarYMostrarPago()" class="w-full py-4 md:py-5 bg-white text-black text-[11px] md:text-[10px] tracking-[0.25em] md:tracking-[0.5em] uppercase hover:bg-[#AF9662] hover:text-white transition font-bold rounded-full">
+                        <button id="btn-validar" onclick="validarYMostrarPago()" class="hilara-main-btn w-full mt-2">
                             Finalizar por WhatsApp
                         </button>
                     </div>
                 </div>
 
-                <div class="bg-white/5 p-6 md:p-12 border border-white/5 h-fit rounded-2xl">
-                    <h3 class="font-serif text-xl md:text-2xl mb-6 md:mb-8 italic">Resumen</h3>
-                    <div id="checkout-summary" class="space-y-4 mb-8 md:mb-10 text-[12px] md:text-[11px] text-white/60 tracking-[0.06em] md:tracking-widest leading-relaxed md:leading-loose"></div>
+                <div class="hilara-panel p-6 md:p-10 rounded-[26px] h-fit">
+                    <p class="hilara-section-kicker text-left mb-3">Resumen del pedido</p>
+                    <h3 class="font-serif text-2xl md:text-3xl mb-6 italic text-[var(--text-main)]">Selección</h3>
 
-                    <div class="border-t border-white/5 pt-6 md:pt-8">
-                        <div class="flex justify-between text-xl md:text-2xl mb-2 md:mb-12 tracking-[0.08em] md:tracking-widest text-white">
+                    <div id="checkout-summary" class="space-y-4 mb-8 text-[13px] text-[var(--text-soft)] leading-7"></div>
+
+                    <div class="border-t border-[rgba(120,92,61,0.10)] pt-6">
+                        <div class="flex justify-between text-xl md:text-2xl tracking-[0.04em] text-[var(--text-main)]">
                             <span>TOTAL</span>
-                            <span id="checkout-total-val" class="text-[#AF9662]">$0</span>
+                            <span id="checkout-total-val" class="text-[var(--accent)] font-semibold">$0</span>
                         </div>
                     </div>
                 </div>
@@ -239,7 +261,7 @@
         </div>
     </section>
 
-    <a href="https://wa.me/5493875809594?text=Hola%20Hilara,%20quisiera%20consultar%20sobre%20sus%20productos" target="_blank" class="fixed bottom-5 right-5 md:bottom-10 md:right-10 z-[150] bg-[#25D366] p-4 rounded-full shadow-2xl hover:scale-110 transition duration-300 safe-bottom">
+    <a href="https://wa.me/5493875809594?text=Hola%20Hilara,%20quisiera%20consultar%20sobre%20sus%20productos" target="_blank" class="fixed bottom-5 right-5 md:bottom-8 md:right-8 z-[150] bg-[#b4845c] p-4 rounded-full shadow-[0_18px_35px_rgba(120,92,61,0.20)] hover:scale-110 transition duration-300 safe-bottom">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-6 h-6 invert" alt="WhatsApp">
     </a>
 
