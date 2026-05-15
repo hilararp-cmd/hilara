@@ -1,0 +1,49 @@
+:root {
+  /* Hilara Brand Palette - Premium & Warm */
+  --bg-primary: #fdfaf6;
+  --bg-secondary: #f4efe7;
+  --bg-accent: #f9f5f0;
+  --bg-glass: rgba(255, 255, 255, 0.75);
+  
+  --text-main: #2c1e14;
+  --text-soft: #5e4a3b;
+  --text-muted: #8d7a6b;
+  --text-white: #ffffff;
+
+  --accent-primary: #b4845c; /* Terracotta/Bronze */
+  --accent-secondary: #d4a373;
+  --accent-dark: #8c623f;
+  --accent-light: #e6ccb2;
+  
+  --success: #2d6a4f;
+  --error: #a4161a;
+  --warning: #f4a261;
+
+  --border-light: rgba(44, 30, 20, 0.08);
+  --border-medium: rgba(44, 30, 20, 0.15);
+  
+  --shadow-sm: 0 4px 12px rgba(44, 30, 20, 0.05);
+  --shadow-md: 0 12px 24px rgba(44, 30, 20, 0.08);
+  --shadow-lg: 0 24px 48px rgba(44, 30, 20, 0.12);
+  
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  --font-body: 'Inter', sans-serif;
+  --font-title: 'Outfit', sans-serif;
+
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-apple: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  
+  --nav-height: 80px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 70px;
+  }
+}

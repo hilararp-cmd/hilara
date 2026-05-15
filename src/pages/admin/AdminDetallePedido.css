@@ -1,0 +1,98 @@
+.admin-detalle-pedido {
+  padding: 1rem;
+}
+
+.back-link {
+  background: none;
+  border: none;
+  color: var(--text-soft);
+  cursor: pointer;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.detail-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.detail-card {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+}
+
+.detail-card h3 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 0.75rem;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.info-row .label {
+  color: var(--text-soft);
+  font-weight: 500;
+}
+
+.status-select {
+  width: 100%;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-medium);
+  font-size: 1rem;
+  background: var(--bg-accent);
+}
+
+.products-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.products-table th {
+  text-align: left;
+  padding: 1rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.products-table td {
+  padding: 1rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.total-val {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  text-align: right;
+}
+
+.obs-box {
+  background: var(--bg-accent);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  font-style: italic;
+  color: var(--text-soft);
+}
+
+.mt-6 { margin-top: 1.5rem; }
+
+@media (max-width: 1024px) {
+  .detail-layout {
+    grid-template-columns: 1fr;
+  }
+}

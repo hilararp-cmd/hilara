@@ -1,0 +1,4 @@
+/* Sharing common admin styles */
+.admin-modal.small {
+  max-width: 500px;
+}

@@ -1,0 +1,108 @@
+.admin-header {
+  margin-bottom: 3rem;
+}
+
+.admin-header h1 {
+  font-size: 2rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.admin-header p {
+  color: var(--text-muted);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-top: 4px solid var(--border-medium);
+}
+
+.stat-card.pending { border-top-color: var(--warning); }
+.stat-card.sales { border-top-color: var(--accent-primary); }
+.stat-card.total { border-top-color: var(--text-main); }
+.stat-card.finished { border-top-color: var(--success); }
+
+.stat-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--bg-accent);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+}
+
+.stat-info h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.stat-info p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.recent-orders h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+}
+
+.table-container {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: var(--bg-accent);
+  text-align: left;
+  padding: 1rem 1.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-soft);
+}
+
+td {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+.status-badge {
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.status-badge.pendiente { background: #fff3e0; color: #ef6c00; }
+.status-badge.en-preparación { background: #e3f2fd; color: #1565c0; }
+.status-badge.enviado { background: #f3e5f5; color: #7b1fa2; }
+.status-badge.finalizado { background: #e8f5e9; color: #2e7d32; }
+.status-badge.cancelado { background: #ffebee; color: #c62828; }
