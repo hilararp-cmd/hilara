@@ -15,13 +15,13 @@ export const NEGOCIO = {
 
 export const generarLinkWhatsApp = (pedido, items, cliente, total) => {
   const fmt = (n) => `$${Number(n).toLocaleString('es-AR', { minimumFractionDigits: 2 })}`;
-  const fecha = new Date(pedido.fecha_pedido).toLocaleString('es-AR', {
+  const fecha = new Date(pedido.created_at).toLocaleString('es-AR', {
     dateStyle: 'long',
     timeStyle: 'short',
   });
 
   const lineas = items
-    .map((i) => `  • ${i.titulo_producto} x${i.cantidad} → ${fmt(i.subtotal)}`)
+    .map((i) => `  • ${i.titulo || i.titulo_producto} x${i.cantidad} → ${fmt(i.subtotal || (i.precio * i.cantidad))}`)
     .join('\n');
 
   const msg = [

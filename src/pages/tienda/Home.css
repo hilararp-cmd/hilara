@@ -183,12 +183,24 @@
 }
 
 @media (max-width: 768px) {
-  .hero { height: 70vh; }
-  .hero-stats { gap: 1.5rem; }
-  .store-container { padding: 2rem 1rem; }
+  .hero { height: 60vh; min-height: 400px; }
+  .hero-stats { gap: 1rem; }
+  .hero-title { font-size: 2.2rem; }
+  
+  .store-container { padding: 1.5rem 1rem; }
+  
   .products-grid .grid {
-    grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
+    gap: 12px; /* Espacio más ajustado */
   }
-  .search-bar-full { padding: 0.75rem 1.5rem; }
+  
+  .search-bar-full { 
+    padding: 0.6rem 1rem; 
+    margin-bottom: 1.5rem;
+  }
+
+  .pill {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
 }
